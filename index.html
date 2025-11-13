@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffeine Half-Life Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>☕ Caffeine Half-Life Calculator</h1>
+        <p class="subtitle">Visualize how caffeine decays in your body over time (Half-life: 5.7 hours)</p>
+        
+        <div id="dosesContainer">
+            <div class="dose-entry" data-dose-id="0">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label>Caffeine Dosage (mg)</label>
+                        <input type="number" class="dosage-input" value="200" min="1" step="1">
+                    </div>
+                    <div class="input-field">
+                        <label>Time Consumed</label>
+                        <input type="time" class="time-input" value="09:00">
+                    </div>
+                    <button class="remove-btn" onclick="removeDose(0)" style="display: none;">✕</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="add-dose-btn" onclick="addDose()">+ Add Another Dose</button>
+        
+        <button class="calculate-btn" onclick="calculate()">Calculate & Visualize</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <div class="result-text" id="resultText"></div>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="caffeineChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
